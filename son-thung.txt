@@ -1,0 +1,27 @@
+R=100; b=10; p=10
+for t=0:0.1:20*pi;
+    x= (R-b)*cos(t);
+    y= (R-b)*sin(t);
+    z= p*t
+    t1= atan2(-x,y);
+    l1= z
+    l2= sqrt(x^2+y^2);
+    subplot(2,2,1);
+    plot(t,t1,'*');
+    pause(0.01);
+    hold on;
+    
+    subplot(2,2,2);
+    plot(t,l1,'*');
+    hold on;
+    
+    subplot(2,2,3);
+    plot(t,l2,'*');
+    hold on;
+    
+    subplot(2,2,4);
+    plot3(x,y,z,'*');
+    xlabel('x(cm)'); ylabel('y(cm)');
+    pause(0.01);
+    hold on
+end

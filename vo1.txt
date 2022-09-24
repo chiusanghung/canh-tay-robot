@@ -1,0 +1,23 @@
+syms t1 t2 l1 l2 l3 b h v STEP
+l1=40; l3=20; b=10; h=100; v=10;
+STEP=0.01;
+for t=0:STEP:10;
+            t1= atan2(h-b-l3,v*t);
+            t2= pi/2 - t1;
+            l2= sqrt((h-b-l3)^2 + (v*t)^2) - l1;
+            Px= (l1+l2)*cos(t1) +l3*cos(t1+t2);
+            Py= (l1+l2)*sin(t1) + l3*(sin(t1+t2));
+      
+            subplot(2,2,1);
+            plot(t,t1*180/pi,'*');
+            hold on
+            subplot(2,2,2);
+            plot(t,t2*180/pi,'*');
+            hold on
+            subplot(2,2,3);
+            plot(t,l2,'*');
+            hold on
+            subplot(2,2,4);
+            plot(Px,Py,'*');
+            hold on
+end
